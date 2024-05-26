@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8946581324",
+    "project_id": "projetodoacao-a1896",
+    "storage_bucket": "projetodoacao-a1896.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8946581324:android:8b09b6964b895e2b73d9e9",
+        "android_client_info": {
+          "package_name": "com.example.telas_pi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH8-Pav2mGNgz1Bwz3cf1FBYBnfFyT7s8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

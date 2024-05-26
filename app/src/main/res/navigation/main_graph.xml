@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.telas_pi.main.SplashFragment"
+        android:label="fragment_splash2"
+        tools:layout="@layout/fragment_splash2" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.telas_pi.crud.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_cadastroFragment"
+            app:destination="@id/cadastroFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_telaInicialFragment"
+            app:destination="@id/telaInicialFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="com.example.telas_pi.crud.CadastroFragment"
+        android:label="CadastroFragment" >
+        <action
+            android:id="@+id/action_cadastroFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/telaInicialFragment"
+        android:name="com.example.telas_pi.TelaInicialFragment"
+        android:label="fragment_tela_inicial"
+        tools:layout="@layout/fragment_tela_inicial" >
+        <action
+            android:id="@+id/action_telaInicialFragment_to_doacaoFragment"
+            app:destination="@id/doacaoFragment" />
+        <action
+            android:id="@+id/action_telaInicialFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_telaInicialFragment_to_listDoacaoFragment"
+            app:destination="@id/listDoacaoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doacaoFragment"
+        android:name="com.example.telas_pi.crud.DoacaoFragment"
+        android:label="fragment_doacao"
+        tools:layout="@layout/fragment_doacao" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.telas_pi.crud.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil">
+        <action
+            android:id="@+id/action_perfilFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listDoacaoFragment"
+        android:name="com.example.telas_pi.crud.ListDoacaoFragment"
+        android:label="fragment_list_doacao"
+        tools:layout="@layout/fragment_list_doacao" />
+</navigation>

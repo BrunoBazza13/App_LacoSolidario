@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".crud.DoacaoFragment">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="26dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOAÇÃO"
+            android:textSize="30sp"
+            android:textStyle="bold">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="SELECIONE A CATEGORIA DA SUA DOAÇÃO:">
+        </TextView>
+
+        <RadioGroup
+            android:id="@+id/radioGroupTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonAlimento"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawablePadding="5dp"
+                android:background="@drawable/bg_alimento_roupas_brinquedos_checked"
+                android:button="@android:color/transparent"
+                android:paddingStart="10dp"
+                android:text="Alimento">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/radioButtonRoupas"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawablePadding="5dp"
+                android:background="@drawable/bg_alimento_roupas_brinquedos_checked"
+                android:button="@android:color/transparent"
+                android:paddingStart="10dp"
+
+                android:text="Roupas">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/radioButtonBrinquedos"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_alimento_roupas_brinquedos_checked"
+                android:button="@android:color/transparent"
+                android:paddingStart="8dp"
+                android:drawablePadding="5dp"
+
+                android:text="Brinquedos">
+
+            </RadioButton>
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="DESCRIÇÃO">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/editDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custon_input"
+            android:inputType="text"
+            android:hint="."
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="IMAGEM DOS ITENS:">
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAddFt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="15dp"
+            android:background="@drawable/custon_add_foto"
+            android:drawableLeft="@drawable/ic_camera"
+            android:text="CARREGAR IMAGEM..." />
+
+        <TextView
+            android:id="@+id/textUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            tools:text="Url"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ENDEREÇO:">
+        </TextView>
+
+        <EditText
+            android:id="@+id/editEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custon_input"
+            android:inputType="text"
+            android:hint="."
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonDoar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/custon_add_foto"
+            android:text="DOAR" />
+    </LinearLayout>
+
+</FrameLayout>
