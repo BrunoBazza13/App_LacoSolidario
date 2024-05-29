@@ -87,6 +87,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:24.0.1")
 
 
+
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")

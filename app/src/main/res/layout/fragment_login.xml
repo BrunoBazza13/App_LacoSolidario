@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".crud.LoginFragment"
-    android:background="@color/color_fundo"
+    android:background="@color/white"
     android:padding="32dp"
     >
 
@@ -24,7 +24,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logonova"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="228dp"
         android:text="E-mail"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,13 +59,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Senha"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />
@@ -91,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/custon_add_foto"
+        android:textColor="@color/white"
         android:text="ENTRAR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

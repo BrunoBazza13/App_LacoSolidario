@@ -25,6 +25,9 @@
             android:id="@+id/action_loginFragment_to_telaInicialFragment"
             app:destination="@id/telaInicialFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastroFragment"
@@ -68,4 +71,16 @@
         android:name="com.example.telas_pi.crud.ListDoacaoFragment"
         android:label="fragment_list_doacao"
         tools:layout="@layout/fragment_list_doacao" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.telas_pi.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_blankFragment_to_listDoacaoFragment"
+            app:destination="@id/listDoacaoFragment" />
+    </fragment>
 </navigation>

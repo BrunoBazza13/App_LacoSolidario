@@ -41,6 +41,7 @@ class DoacaoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         database = FirebaseDatabase.getInstance().reference.child("doacoes")
         saveEvent2()
+        binding.backButton.setOnClickListener { onBackButtonClicked() }
         binding.buttonAddFt.setOnClickListener {openGallery()}
     }
 
@@ -152,6 +153,11 @@ class DoacaoFragment : Fragment() {
             .addOnFailureListener { e ->
                 Toast.makeText(context, "Falha no upload da imagem: ${e.message}", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    fun onBackButtonClicked() {
+        // Adicione aqui o código para lidar com o clique na imagem de voltar
+        requireActivity().onBackPressed()
     }
 
 }

@@ -52,11 +52,11 @@ class ListDoacaoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-        fetchUserDonations(true)
+        //fetchUserDonations(true)
+        checkIfInstitutionAndFetchDoacoes()
         setupRecyclerView(eventsList)
 
     }
-
 
     private fun setupRecyclerView(eventLister: List<Doacao>) {
 
@@ -72,9 +72,6 @@ class ListDoacaoFragment : Fragment() {
     private fun fetchUserDonations(isFuture: Boolean) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
-        println("resposta=======> " + userId)
-
-        // Supondo que o nó de doações tenha uma estrutura onde cada doação tem um campo userId.
         database = FirebaseDatabase.getInstance().getReference("doacoes")
 
         database.orderByChild("usuarioId").equalTo(userId)
@@ -96,6 +93,49 @@ class ListDoacaoFragment : Fragment() {
                     Toast.makeText(context, "Falha ao carregar doações.", Toast.LENGTH_SHORT).show()
                 }
             })
+    }
+
+
+    private fun fetchTodasDoacoes() {
+        database = FirebaseDatabase.getInstance().getReference("doacoes")
+
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                eventsList.clear()
+                for (doacaoSnapshot in snapshot.children) {
+                    val doacao = doacaoSnapshot.getValue(Doacao::class.java)
+                    doacao?.let { eventsList.add(it) }
+                }
+                eventAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, "Falha ao carregar doações.", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun checkIfInstitutionAndFetchDoacoes() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+
+        // Referência ao banco de dados de usuários
+        val userDatabase = FirebaseDatabase.getInstance().getReference("users").child(userId)
+        userDatabase.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val usuario = snapshot.getValue(Usuario::class.java)
+                if (usuario?.tipoDeUsuario == "instituicao") {
+                    // Se o usuário é uma instituição, carrega todas as doações
+                    fetchTodasDoacoes()
+                } else {
+                    fetchUserDonations(true)
+
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, "Erro ao verificar tipo de usuário.", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
 

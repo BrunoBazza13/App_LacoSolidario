@@ -71,7 +71,7 @@ class CadastroFragment : Fragment() {
 
             R.id.radioButtonCNPJ -> {
                 if (editTextCPFouCNPJ.text.length == 14) {
-                    val cnpj = editTextCPFouCNPJ.text.toString()
+                     cnpj = editTextCPFouCNPJ.text.toString()
                     "instituicao"
                 } else {
                     throw IllegalArgumentException("CNPJ inválido")

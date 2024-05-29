@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -9,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".crud.CadastroFragment"
-            android:background="@color/color_fundo">
+            android:background="@drawable/background_gradient">
 
 
             <LinearLayout
@@ -17,16 +18,19 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="32dp">
+                android:padding="36dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/backgorud_view_top">
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Cadastre-se"
-                    android:textSize="36sp"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
-
 
                 <TextView
                     android:id="@+id/textViewPerfil"
@@ -79,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textStyle="bold"
-                    android:text="Nome" />
+                    android:text="Nome:" />
 
                 <EditText
                     android:id="@+id/editTextNome"
@@ -100,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textStyle="bold"
-                    android:text="E-mail" />
+                    android:text="E-mail:" />
 
                 <EditText
                     android:id="@+id/editTextEmail"
@@ -121,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textStyle="bold"
-                    android:text="Telefone" />
+                    android:text="Telefone:" />
 
 
                 <EditText
@@ -145,7 +149,7 @@
                     android:layout_marginTop="20dp"
                     android:textStyle="bold"
 
-                    android:text="Senha" />
+                    android:text="Senha:" />
 
                 <EditText
                     android:id="@+id/editTextSenha"
@@ -165,8 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginEnd="50dp"
+                    android:textColor="@color/white"
                     android:background="@drawable/custon_add_foto"
                     android:text="Cadastrar" />
 
@@ -187,6 +190,8 @@
                     android:visibility="invisible" />
 
             </LinearLayout>
+
+
 
 
         </RelativeLayout>

@@ -35,7 +35,6 @@ class PerfilFragment : Fragment() {
     private var _binding: FragmentPerfilBinding? = null
     private val binding get() = _binding!!
     private lateinit var usuario: Usuario
-   // private lateinit var fab: FloatingActionButton
     private lateinit var userId: String
     private lateinit var database: DatabaseReference
 
@@ -89,10 +88,18 @@ class PerfilFragment : Fragment() {
     }
 
     private fun atualizaDados() {
+
+        if (usuario.tipoDeUsuario == "instituicao") {
+            // Se for uma instituição, muda o texto do TextView CPF para CNPJ
+            binding.textViewCPF.text = "CNPJ:"
+            binding.textViewCPFGet.text = usuario.cnpj
+        }else {
+            binding.textViewCPFGet.text = usuario.cpf
+        }
+
         binding.textViewNomeGet.text = usuario.nome
         binding.textViewEmailGet.text = usuario.login
         binding.textViewTelefoneGet.text = usuario.telefone
-        binding.textViewCPFGet.text = usuario.cpf
 
 
         binding.textViewNomeGet.setOnClickListener { showEditTextDialog("nome") }
@@ -211,9 +218,9 @@ class PerfilFragment : Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 val imageUri: Uri? = result.data?.data
                 imageUri?.let { uri ->
-                    Glide.with(this)
-                        .load(uri)
-                        .into(binding.imageView5)
+
+                    binding.progressBar.visibility = View.VISIBLE
+                   // imageView.visibility = View.GONE
 
                     uploadImageToFirebase(uri)
                 }
@@ -236,6 +243,7 @@ class PerfilFragment : Fragment() {
                     val imageUrl = uri.toString()
                     usuario.profileImageUrl = imageUrl
                     updateUserInDatabase() // Atualiza o usuário no banco de dados
+                    binding.progressBar.visibility = View.GONE
 
                 }
             }

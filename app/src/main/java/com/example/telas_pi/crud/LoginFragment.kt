@@ -1,6 +1,8 @@
 package com.example.telas_pi.crud
 
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,10 @@ import com.example.telas_pi.R
 import com.example.telas_pi.databinding.FragmentLoginBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 /**
  * A simple [Fragment] subclass.
@@ -50,13 +56,34 @@ class LoginFragment : Fragment() {
 
     private fun login(email: String, password: String) {
         val auth = firebase.auth
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
-            if(task.isSuccessful) {
-                findNavController().navigate(R.id.action_loginFragment_to_telaInicialFragment)
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val userId = auth.currentUser?.uid
+                val database = FirebaseDatabase.getInstance().getReference("users")
+
+                if (userId != null) {
+                    database.child(userId).child("tipoDeUsuario").addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            val userType = snapshot.getValue(String::class.java)
+
+                            // Verifica o tipo de usuário e navega para a tela correspondente
+                            when (userType) {
+                                "instituicao" -> findNavController().navigate(R.id.action_loginFragment_to_blankFragment)
+                                "doador" -> findNavController().navigate(R.id.action_loginFragment_to_telaInicialFragment)
+                                else -> Toast.makeText(requireContext(), "Tipo de usuário desconhecido", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            Toast.makeText(requireContext(), "Erro ao obter tipo de usuário", Toast.LENGTH_SHORT).show()
+                        }
+                    })
+                }
             } else {
                 Toast.makeText(requireContext(), "Usuário ou Senha inválidos", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun initListeners() {

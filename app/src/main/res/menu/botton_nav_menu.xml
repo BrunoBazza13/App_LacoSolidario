@@ -10,10 +10,12 @@
         android:icon="@drawable/ic_person"
         android:id="@+id/person"
         />
+
     <item android:title=""
         android:icon="@drawable/ic_heart"
         android:id="@+id/heart"
        />
+
 
 
 </menu>
