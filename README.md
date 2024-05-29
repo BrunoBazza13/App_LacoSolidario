@@ -15,6 +15,6 @@ O presente projeto apresenta um aplicativo de doação de alimentos e roupas, co
 
 
 
-Bruno Bazza
-Linkedin: https://linkedin.com/in/brunonbazza/
-E-mail: brunonbazza@gmail.com
+## Contato
+- Linkedin: https://linkedin.com/in/brunonbazza/
+- E-mail: brunonbazza@gmail.com
