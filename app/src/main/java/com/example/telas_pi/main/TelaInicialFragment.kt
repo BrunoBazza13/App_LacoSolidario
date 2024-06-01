@@ -1,4 +1,4 @@
-package com.example.telas_pi
+package com.example.telas_pi.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -42,17 +42,20 @@ class TelaInicialFragment : Fragment() {
 
     private fun initListeners2(UserId: Long){
         binding.buttonMeuPerfil.setOnClickListener {
-           val action = TelaInicialFragmentDirections.actionTelaInicialFragmentToPerfilFragment()
+           val action =
+              TelaInicialFragmentDirections.actionTelaInicialFragmentToPerfilFragment()
             findNavController().navigate(action)
         }
 
         binding.buttonDoar.setOnClickListener {
-            val action = TelaInicialFragmentDirections.actionTelaInicialFragmentToDoacaoFragment()
+            val action =
+                TelaInicialFragmentDirections.actionTelaInicialFragmentToDoacaoFragment()
             findNavController().navigate(action)
         }
 
         binding.button2.setOnClickListener {
-            val action = TelaInicialFragmentDirections.actionTelaInicialFragmentToListDoacaoFragment()
+            val action =
+                TelaInicialFragmentDirections.actionTelaInicialFragmentToListDoacaoFragment()
             findNavController().navigate(action)
         }
 

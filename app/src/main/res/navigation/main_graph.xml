@@ -23,11 +23,14 @@
             app:destination="@id/cadastroFragment" />
         <action
             android:id="@+id/action_loginFragment_to_telaInicialFragment"
-            app:destination="@id/telaInicialFragment"
+            app:destination="@id/home"
             app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_loginFragment_to_blankFragment"
             app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_recover"
+            app:destination="@id/recover" />
     </fragment>
     <fragment
         android:id="@+id/cadastroFragment"
@@ -38,27 +41,26 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/telaInicialFragment"
-        android:name="com.example.telas_pi.TelaInicialFragment"
+        android:id="@+id/home"
+        android:name="com.example.telas_pi.main.TelaInicialFragment"
         android:label="fragment_tela_inicial"
         tools:layout="@layout/fragment_tela_inicial" >
         <action
             android:id="@+id/action_telaInicialFragment_to_doacaoFragment"
-            app:destination="@id/doacaoFragment" />
+            app:destination="@id/done" />
         <action
-            android:id="@+id/action_telaInicialFragment_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
+            android:id="@+id/action_telaInicialFragment_to_perfilFragment" app:destination="@id/person" />
         <action
             android:id="@+id/action_telaInicialFragment_to_listDoacaoFragment"
-            app:destination="@id/listDoacaoFragment" />
+            app:destination="@id/heart" />
     </fragment>
     <fragment
-        android:id="@+id/doacaoFragment"
+        android:id="@+id/done"
         android:name="com.example.telas_pi.crud.DoacaoFragment"
         android:label="fragment_doacao"
         tools:layout="@layout/fragment_doacao" />
     <fragment
-        android:id="@+id/perfilFragment"
+        android:id="@+id/person"
         android:name="com.example.telas_pi.crud.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil">
@@ -67,7 +69,7 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/listDoacaoFragment"
+        android:id="@+id/heart"
         android:name="com.example.telas_pi.crud.ListDoacaoFragment"
         android:label="fragment_list_doacao"
         tools:layout="@layout/fragment_list_doacao" />
@@ -78,9 +80,19 @@
         tools:layout="@layout/fragment_blank" >
         <action
             android:id="@+id/action_blankFragment_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
+            app:destination="@id/person" />
         <action
             android:id="@+id/action_blankFragment_to_listDoacaoFragment"
-            app:destination="@id/listDoacaoFragment" />
+            app:destination="@id/heart" />
     </fragment>
+    <fragment
+        android:id="@+id/recover"
+        android:name="com.example.telas_pi.crud.Recover"
+        android:label="fragment_recover"
+        tools:layout="@layout/fragment_recover" >
+        <action
+            android:id="@+id/action_recover_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
 </navigation>

@@ -1,17 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Telas_PI" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Telas_PI" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-    </style>
+        </style>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/color_primary</item>
-    </style>'
-
-    <style name="AlertDialogCustom" parent="Theme.MaterialComponents.Light.Dialog.Alert">
-        <item name="android:windowBackground">@android:color/transparent</item>
-    </style>
-
+        <style name="AlertDialogCustom" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+            <item name="android:windowBackground">@android:color/transparent</item>
+        </style>
 
     <style name="Theme.Telas_PI" parent="Base.Theme.Telas_PI" />
 </resources>

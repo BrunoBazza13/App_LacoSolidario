@@ -156,7 +156,6 @@ class CadastroFragment : Fragment() {
     }
 
 
-
     private fun initListeners() {
         binding.buttonCadastrar.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE

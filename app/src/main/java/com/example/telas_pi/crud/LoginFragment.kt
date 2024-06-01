@@ -50,8 +50,11 @@ class LoginFragment : Fragment() {
         binding.btnRegistrar.setOnClickListener() {
             findNavController().navigate(R.id.action_loginFragment_to_cadastroFragment)
         }
-    }
 
+        binding.btnEsqueceuSEnha.setOnClickListener(){
+            findNavController().navigate(R.id.action_loginFragment_to_recover)
+        }
+    }
 
 
     private fun login(email: String, password: String) {

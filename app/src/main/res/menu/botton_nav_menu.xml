@@ -14,8 +14,11 @@
     <item android:title=""
         android:icon="@drawable/ic_heart"
         android:id="@+id/heart"
-       />
+      />
 
-
+    <item android:title=""
+        android:icon="@drawable/ic_done"
+        android:id="@+id/done"
+        />
 
 </menu>

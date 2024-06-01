@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,8 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/background_gradient"
-        android:navigationIcon="@drawable/baseline_arrow_back_24"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:navigationIcon="@drawable/ic_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/back_button"
@@ -23,51 +24,47 @@
         android:layout_marginTop="10dp"
         android:paddingStart="10dp"
         android:onClick="onBackButtonClicked"
-        android:src="@drawable/baseline_arrow_back_24"
+        android:src="@drawable/ic_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView8"
-        app:layout_constraintTop_toBottomOf="@id/tobar">
+        android:paddingBottom="?attr/actionBarSize"
+        app:layout_constraintTop_toBottomOf="@id/tobar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fitsSystemWindows="true">
 
-
-        <!-- Contêiner externo com padding -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:padding="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView8"
-            app:layout_constraintTop_toBottomOf="@id/tobar">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
 
             <!-- Texto "DOAÇÃO" -->
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif-black"
                 android:text="DOAÇÃO"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_gravity="center_horizontal" />
 
             <!-- Selecione a categoria -->
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:text="SELECIONE A CATEGORIA DA SUA DOAÇÃO:"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView3" />
+                android:textColor="@android:color/black" />
 
             <!-- RadioGroup -->
             <RadioGroup
@@ -76,9 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                android:layout_gravity="center_horizontal">
 
                 <!-- RadioButtons -->
                 <RadioButton
@@ -95,7 +90,7 @@
                     android:layout_width="95dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:background="@drawable/bg_alimento_roupas_brinquedos_checked"
+                    android:background="@drawable/radio_button_selector"
                     android:button="@android:color/transparent"
                     android:paddingStart="10dp"
                     android:text="Brinquedos" />
@@ -105,7 +100,7 @@
                     android:layout_width="95dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:background="@drawable/bg_alimento_roupas_brinquedos_checked"
+                    android:background="@drawable/radio_button_selector"
                     android:button="@android:color/transparent"
                     android:paddingStart="20dp"
                     android:text="Roupas" />
@@ -119,14 +114,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:text="DESCRIÇÃO"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroupTipo" />
+                android:textColor="@android:color/black" />
 
             <!-- EditText para descrição -->
             <EditText
                 android:id="@+id/editDescricao"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/custon_input"
@@ -134,10 +127,7 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                android:paddingEnd="12dp" />
 
             <!-- Texto para imagem dos itens -->
             <TextView
@@ -146,9 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:text="IMAGEM DOS ITENS:"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editDescricao" />
+                android:textColor="@android:color/black" />
 
             <!-- Botão para carregar imagem -->
             <androidx.appcompat.widget.AppCompatButton
@@ -156,25 +144,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/custon_add_foto"
+                android:background="@drawable/custon_button"
                 android:drawableLeft="@drawable/ic_camera"
                 android:padding="15dp"
-                android:text="CARREGAR IMAGEM..."
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                android:text="CARREGAR IMAGEM..." />
 
             <!-- Texto para URL -->
             <TextView
                 android:id="@+id/textUrl"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonAddFt"
-                tools:text="Url" />
+                android:text="Url" />
 
             <!-- Texto para endereço -->
             <TextView
@@ -183,14 +165,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:text="ENDEREÇO:"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textUrl" />
+                android:textColor="@android:color/black" />
 
             <!-- EditText para endereço -->
             <EditText
                 android:id="@+id/editEndereco"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/custon_input"
@@ -199,10 +179,7 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                android:paddingEnd="12dp" />
 
             <!-- Botão Doar -->
             <androidx.appcompat.widget.AppCompatButton
@@ -210,25 +187,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:background="@drawable/custon_add_foto"
-                android:text="DOAR"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editEndereco" />
+                android:background="@drawable/custon_button"
+                android:text="DOAR" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
     </ScrollView>
-    <!-- BottomNavigationView -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView8"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@drawable/background_gradient"
-        app:itemIconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/botton_nav_menu" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,13 +46,14 @@ class ListDoacaoFragment : Fragment() {
 
         database = FirebaseDatabase.getInstance().getReference("crudevents")
         _binding = FragmentListDoacaoBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-        //fetchUserDonations(true)
+        onBackButtonClicked()
         checkIfInstitutionAndFetchDoacoes()
         setupRecyclerView(eventsList)
 
@@ -137,6 +138,11 @@ class ListDoacaoFragment : Fragment() {
             }
         })
     }
+    fun onBackButtonClicked() {
+        binding.backButton.setOnClickListener { requireActivity().onBackPressed()}
+
+    }
+
 }
 
 

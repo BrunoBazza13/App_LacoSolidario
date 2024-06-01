@@ -49,6 +49,7 @@ class PerfilFragment : Fragment() {
             Toast.makeText(context, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
         }
         excluirConta()
+        onBackButtonClicked()
         binding.floatingActionButton3.setOnClickListener {openGallery()}
 
     }
@@ -254,6 +255,11 @@ class PerfilFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+    }
+
+    fun onBackButtonClicked() {
+        binding.backButton.setOnClickListener { requireActivity().onBackPressed()}
+
     }
 
 }

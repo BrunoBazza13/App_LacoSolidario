@@ -170,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:textColor="@color/white"
-                    android:background="@drawable/custon_add_foto"
+                    android:background="@drawable/custon_button"
                     android:text="Cadastrar" />
 
                 <TextView

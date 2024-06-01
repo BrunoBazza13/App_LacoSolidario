@@ -41,7 +41,7 @@ class DoacaoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         database = FirebaseDatabase.getInstance().reference.child("doacoes")
         saveEvent2()
-        binding.backButton.setOnClickListener { onBackButtonClicked() }
+            onBackButtonClicked()
         binding.buttonAddFt.setOnClickListener {openGallery()}
     }
 
@@ -156,8 +156,8 @@ class DoacaoFragment : Fragment() {
     }
 
     fun onBackButtonClicked() {
-        // Adicione aqui o código para lidar com o clique na imagem de voltar
-        requireActivity().onBackPressed()
+        binding.backButton.setOnClickListener { requireActivity().onBackPressed()}
+
     }
 
 }

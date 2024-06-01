@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaInicialFragment"
+    tools:context=".main.TelaInicialFragment"
     android:background="@drawable/background_gradient">
 
     <LinearLayout
@@ -54,7 +54,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/custon_add_foto"
+            android:background="@drawable/custon_button"
             android:text="Doar itens"
             android:textColor="@color/white" />
 
@@ -65,7 +65,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/custon_add_foto"
+            android:background="@drawable/custon_button"
             android:text="Minhas doações"
             android:textColor="@color/white" />
 
@@ -76,7 +76,7 @@
            android:layout_marginBottom="15dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/custon_add_foto"
+            android:background="@drawable/custon_button"
             android:text="Meu Perfil"
             android:textColor="@color/white" />
     </LinearLayout>

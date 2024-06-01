@@ -9,6 +9,7 @@
      tools:context=".main.MainActivity"
    >
 
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="1dp"
-            android:src="@drawable/baseline_arrow_back_24"
+            android:src="@drawable/ic_arrow"
             />
     </androidx.appcompat.widget.Toolbar>
 
@@ -31,19 +32,20 @@
         android:id="@+id/frameLayout5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNavigationView8"
+            android:layout_above="@+id/bottomNavigationView"
         android:layout_below="@+id/tobar"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="-1dp" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView8"
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        app:itemIconTint="@color/backgroud_button_navigation_color"
         app:menu="@menu/botton_nav_menu"
-        android:background="@color/color_botao"
+        android:background="@drawable/background_gradient"
         android:visibility="gone"/>
 
 
